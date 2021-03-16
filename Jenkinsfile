@@ -3,6 +3,7 @@ pipeline {
     environment {
        VERSION = '1.9.0'
        APP_NAME = 'Example App'
+       GITHUB_CREDS = credentials('gitHubCreds')
     }
     stages {
         stage('build') {
@@ -11,9 +12,9 @@ pipeline {
                 echo "Current build is ${BUILD_NUMBER}"
             }
         }
-        stage('test') {
+        stage('git-creds') {
             steps {
-                echo "Hi, testing the app...."
+                echo "Id is ${GITHUB_CREDS_USR} and password is ${GITHUB_CREDS_PSW}"
             }
         }
     }
