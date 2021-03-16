@@ -1,14 +1,18 @@
 pipeline {
     agent any
+    environment {
+       VERSION : '1.9.0'
+       APP_NAME : 'Example App'
+    }
     stages {
         stage('build') {
             steps {
-                bat "mvn clean install"
+                echo "App name is ${APP_NAME} and version is ${VERSION}"
             }
         }
         stage('test') {
             steps {
-                echo "Hi, building the app...."
+                echo "Hi, testing the app...."
             }
         }
     }
