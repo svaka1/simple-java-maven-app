@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-       VERSION : '1.9.0'
-       APP_NAME : 'Example App'
+       VERSION = '1.9.0'
+       APP_NAME = 'Example App'
     }
     stages {
         stage('build') {
