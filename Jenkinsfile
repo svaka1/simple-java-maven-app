@@ -8,6 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "App name is ${APP_NAME} and version is ${VERSION}"
+                echo "Current build is ${BUILD_NUMBER}"
             }
         }
         stage('test') {
