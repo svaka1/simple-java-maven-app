@@ -5,7 +5,7 @@ pipeline {
        GITHUB_CREDS = credentials('gitHubCreds')
     }
     parameters {
-        string(name:'VERSION',defaultValue:'1.9.0',description:'Version of the application')
+        choice(name:'VERSION',choices:['1.9.0','1.9.1','1.9.2'],description:'Version of the application')
      
      }
     stages {
