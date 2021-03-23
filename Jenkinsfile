@@ -1,10 +1,13 @@
 pipeline {
     agent any
     environment {
-       VERSION = '1.9.0'
        APP_NAME = 'Example App'
        GITHUB_CREDS = credentials('gitHubCreds')
     }
+    parameters {
+        string(name:'VERSION',defaultValue:'1.9.0',description:'Version of the application')
+     
+     }
     stages {
         stage('build') {
             steps {
